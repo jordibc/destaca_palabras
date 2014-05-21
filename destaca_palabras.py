@@ -38,7 +38,7 @@ def main():
         print ('Calculando frecuencia de las palabras en los textos '
                'normales...')
     priors = get_freqs(args.aprende_de, args.verboso)
-    min_priors = min(v for k,v in priors.iteritems()) if priors else 1e-5
+    min_priors = min(priors.itervalues()) if priors else 1e-5
 
     # Muestra las palabras por orden de interés.
     if args.verboso:
